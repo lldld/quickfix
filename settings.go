@@ -174,3 +174,21 @@ func (s *Settings) AddSession(sessionSettings *SessionSettings) (SessionID, erro
 
 	return sessionID, nil
 }
+
+
+//ResetSessions reset all sessionIDs by session settings
+//Sometimes we have no enough fileds when call ParseSettings funcution, then the session id is invalid
+func (s *Settings) ResetSessions() *Settings {
+	sessionIDs := make([]SessionID, 0)
+	for sessionID := range s.sessionSettings {
+		sessionIDs = append(sessionIDs, sessionID)
+	}
+
+	for _, sessionID := range sessionIDs {
+		sessionSettings := s.sessionSettings[sessionID]
+		delete(s.sessionSettings, sessionID)
+		s.AddSession(sessionSettings)
+	}
+
+	return s
+}
