@@ -19,7 +19,7 @@ Getting Started and Documentation
 To install QuickFIX/Go, use `go get`:
 
 ```sh
-$ go get github.com/quickfixgo/quickfix
+$ go get github.com/lldld/quickfix
 ```
 
 ### Staying up to date

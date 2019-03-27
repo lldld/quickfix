@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/quickfixgo/quickfix/config"
+	"github.com/lldld/quickfix/config"
 )
 
 //Initiator initiates connections and processes messages for all sessions.
